@@ -1,4 +1,4 @@
-package com.ingenium.examdb;
+package com.ingenium.examdb.classes;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -14,14 +14,14 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "classname")
 public class Schoolclass {
     @Id
-    @GeneratedValue
+    @Column(name = "class_id")
     private long id;
     private String name;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn("classname")
+    @OneToMany(mappedBy = "schoolclass")
     private List<Student> studentList;
 
 }

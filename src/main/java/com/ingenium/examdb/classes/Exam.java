@@ -1,4 +1,4 @@
-package com.ingenium.examdb;
+package com.ingenium.examdb.classes;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -16,16 +16,17 @@ import java.time.LocalDate;
 public class Exam {
 
     @Id
-    @GeneratedValue
+    @Column(name="exam_id")
     private long id;
     private LocalDate date;
     private int duration;
 
     @ManyToOne
-    @JoinColumn(name="students")
+    @JoinColumn(name="student")
     private Student student;
+
     @ManyToOne
-    @JoinColumn(name="exams")
-    private Exam exam;
+    @JoinColumn(name="subject")
+    private Subject subject;
 
 }

@@ -1,5 +1,6 @@
-package com.ingenium.examdb;
+package com.ingenium.examdb.classes;
 
+import com.ingenium.examdb.classes.Exam;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -15,13 +16,12 @@ import java.util.List;
 @AllArgsConstructor
 public class Subject {
     @Id
-    @GeneratedValue
+    @Column(name="subject_id")
     private long id;
     private String longname;
     private String shortname;
     private boolean written;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name="exams")
-    private List<Exam> examList;
+    @OneToMany(mappedBy = "subject")
+    private List<Exam> exams;
 }
