@@ -16,7 +16,7 @@ import java.util.List;
 @AllArgsConstructor
 public class Subject {
     @Id
-    @Column(name="subject_id")
+    @Column(name = "subject_id")
     private long id;
     private String longname;
     private String shortname;
