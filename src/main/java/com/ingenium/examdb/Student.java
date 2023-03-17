@@ -24,7 +24,6 @@ public class Student {
     @JoinColumn(name="classname")
     private Schoolclass schoolclass;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name="exam")
+    @OneToMany(mappedBy = "exam")
     private List<Exam> studentsExamList;
 }

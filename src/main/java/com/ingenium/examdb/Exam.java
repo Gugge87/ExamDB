@@ -22,10 +22,10 @@ public class Exam {
     private int duration;
 
     @ManyToOne
-    @JoinColumn(name="student")
+    @JoinColumn(name="students")
     private Student student;
     @ManyToOne
-    @JoinColumn(name="exam")
+    @JoinColumn(name="exams")
     private Exam exam;
 
 }
