@@ -1,8 +1,6 @@
 package com.ingenium.examdb;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,5 +20,12 @@ public class Exam {
     private long id;
     private LocalDate date;
     private int duration;
+
+    @ManyToOne
+    @JoinColumn(name="student")
+    private Student student;
+    @ManyToOne
+    @JoinColumn(name="exam")
+    private Exam exam;
 
 }

@@ -21,7 +21,7 @@ public class Schoolclass {
     private String name;
 
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name="classname")
+    @JoinColumn(name="students")
     private List<Student> studentList;
 
 }

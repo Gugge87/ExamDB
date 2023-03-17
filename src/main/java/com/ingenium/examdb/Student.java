@@ -1,12 +1,12 @@
 package com.ingenium.examdb;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.List;
 
 @Entity
 @Getter
@@ -19,4 +19,12 @@ public class Student {
     private long id;
     private String firstname;
     private String lastname;
+
+    @ManyToOne
+    @JoinColumn(name="classname")
+    private Schoolclass schoolclass;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name="exam")
+    private List<Exam> studentsExamList;
 }

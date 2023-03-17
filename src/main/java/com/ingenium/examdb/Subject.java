@@ -1,12 +1,12 @@
 package com.ingenium.examdb;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.List;
 
 @Entity
 @Getter
@@ -20,4 +20,8 @@ public class Subject {
     private String longname;
     private String shortname;
     private boolean written;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name="exams")
+    private List<Exam> examList;
 }
