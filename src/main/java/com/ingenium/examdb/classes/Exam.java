@@ -1,5 +1,6 @@
 package com.ingenium.examdb.classes;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -23,6 +24,7 @@ public class Exam {
     private int duration;
 
     @ManyToOne
+    @JsonIgnore
     @JoinColumn(name="student")
     private Student student;
 

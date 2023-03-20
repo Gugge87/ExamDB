@@ -1,5 +1,6 @@
 package com.ingenium.examdb.classes;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.ingenium.examdb.classes.Exam;
 import com.ingenium.examdb.classes.Schoolclass;
 import jakarta.persistence.*;
@@ -28,5 +29,6 @@ public class Student {
     private Schoolclass schoolclass;
 
     @OneToMany(mappedBy = "student")
+    @JsonIgnore
     private List<Exam> exams;
 }
