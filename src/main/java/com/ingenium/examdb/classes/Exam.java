@@ -18,6 +18,7 @@ public class Exam {
     @Id
     @Column(name="exam_id")
     private long id;
+    @Column(name="dateofexam")
     private LocalDate date;
     private int duration;
 

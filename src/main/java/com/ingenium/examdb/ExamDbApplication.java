@@ -10,4 +10,7 @@ public class ExamDbApplication {
 		SpringApplication.run(ExamDbApplication.class, args);
 	}
 
+
 }
+
+
