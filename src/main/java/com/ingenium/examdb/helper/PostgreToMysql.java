@@ -938,6 +938,7 @@ public class PostgreToMysql {
                 "INSERT INTO public.exam (exam_id, dateofexam, duration, student, subject) VALUES (547, '2017-09-15', 30, 215, 7);\n" +
                 "INSERT INTO public.exam (exam_id, dateofexam, duration, student, subject) VALUES (548, '2018-04-15', 20, 491, 9);");
 
+        System.out.println(sql_schoolclass);
         System.out.println(sql_students);
         System.out.println(sql_subject);
         System.out.println(sql_exams);
