@@ -29,8 +29,5 @@ public class Exam {
     @ManyToOne
     @JoinColumn(name="subject")
     private Subject subject;
-
-    public void setId(long id) {
-        this.id=id;
-    }
+    
 }

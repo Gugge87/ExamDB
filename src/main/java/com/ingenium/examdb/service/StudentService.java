@@ -12,6 +12,7 @@ public class StudentService {
 
     @Autowired
     private StudentRepository studentRepository;
+    Student student;
 
     public List<Student> getAllStudents(long schoolclassid){
         return studentRepository.findAllStudentsBySchoolclassIdOrderByLastname(schoolclassid);
