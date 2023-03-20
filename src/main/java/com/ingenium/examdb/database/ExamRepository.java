@@ -6,6 +6,6 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.List;
 
 public interface ExamRepository extends CrudRepository<Exam, Long> {
+    List<Exam> findExamsByStudentId(Long studentid);
 
-    List<Exam> findAllByStudentId(Long studentid);
 }

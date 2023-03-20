@@ -13,7 +13,13 @@ public class ExamService {
     @Autowired
     private ExamRepository examRepository;
 
-    public List<Exam> getAllExamsByStudent(Long studentid){
-        return examRepository.findAllByStudentId(studentid);
+    public List<Exam> getAllExamsByStudent(long studentid){
+        return examRepository.findExamsByStudentId(studentid);
+    }
+
+    public Exam createExam(Exam exam){
+        exam.setId(null);
+        exam = examRepository.save(exam);
+        return exam;
     }
 }

@@ -30,4 +30,7 @@ public class Exam {
     @JoinColumn(name="subject")
     private Subject subject;
 
+    public void setId(long id) {
+        this.id=id;
+    }
 }
